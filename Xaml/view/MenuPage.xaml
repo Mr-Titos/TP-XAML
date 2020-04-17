@@ -1,0 +1,220 @@
+﻿<Page x:Class="Xaml.view.MenuPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Xaml"
+      mc:Ignorable="d"
+      Title="Menu" Width="1044.745" Height="646.868">
+
+    <Grid>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="650"  VerticalAlignment="Top" Width="1037" TabStripPlacement="Left" Margin="4,0,0,-2.8">
+            <TabItem Header="Auteur" Height="50">
+                <Grid Background="#FF00FDF0" Margin="1,0,-2,0">
+                    <DataGrid x:Name="dataGridAuteur" HorizontalAlignment="Left" Margin="20,0,20,0" VerticalAlignment="Top" AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding id_auteur}" Header="N°" />
+                            <DataGridTextColumn Binding="{Binding pseudo_auteur}" Header="Pseudo"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Grid Margin="129,139,262,129" DataContext="{Binding ElementName=dataGridAuteur, Path=SelectedItem}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="77*"/>
+                            <ColumnDefinition Width="206*"/>
+                            <ColumnDefinition Width="78*"/>
+                            <ColumnDefinition Width="107*"/>
+                            <ColumnDefinition Width="98*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Margin="0,10,9.8,10.2" HorizontalAlignment="Right" Width="24" FontWeight="Bold">N°</Label>
+                        <Label Grid.Row="1" Margin="0,9.8,9.8,10.4" HorizontalAlignment="Right" Width="49" FontWeight="Bold">Pseudo*</Label>
+                        <Label Grid.Row="2" Margin="0,9.6,9.8,9.6" HorizontalAlignment="Right" Width="35" FontWeight="Bold">Mdp*</Label>
+                        <Label Grid.Row="3" Margin="0,10.4,9.8,9.8" HorizontalAlignment="Right" Width="43" FontWeight="Bold">Image*</Label>
+                        <Label Grid.Row="4" Margin="0,10.2,9.8,10.2" HorizontalAlignment="Right" Width="36" FontWeight="Bold">Nom</Label>
+                        <Label Grid.Row="5" Margin="0,9.8,9.8,9.4" HorizontalAlignment="Right" Width="51" FontWeight="Bold">Prenom</Label>
+                        <Label Grid.Row="0" Margin="0,10,10.8,10.2" HorizontalAlignment="Right" Grid.Column="2" Width="31" FontWeight="Bold">Rue</Label>
+                        <Label Grid.Row="1" Margin="0,9.8,10.8,10.4" HorizontalAlignment="Right" Grid.Column="2" Width="24" FontWeight="Bold">Cp</Label>
+                        <Label Grid.Row="2" Margin="0,9.6,10.8,9.6" HorizontalAlignment="Right" Grid.Column="2" Width="32" FontWeight="Bold">Ville</Label>
+                        <Label Grid.Row="3" Margin="0,10.4,10.8,9.8" HorizontalAlignment="Right" Grid.Column="2" Width="24" FontWeight="Bold">Tel</Label>
+                        <Label Grid.Row="4" Margin="0,10.2,10.8,10.2" HorizontalAlignment="Right" Grid.Column="2" Width="39" FontWeight="Bold">Email</Label>
+                        <Label Grid.Row="5" Margin="0,9.8,10.8,9.4" HorizontalAlignment="Right" Grid.Column="2" Width="35" FontWeight="Bold">Desc</Label>
+
+                        <TextBox x:Name="txtIdAuteur" Grid.Column="1" Margin="10.2,10,9.2,10.2" Text="{Binding id_auteur}" />
+                        <TextBox x:Name="txtPseudoAuteur" Grid.Column="1" Margin="10.2,9.8,9.2,10.4" Text="{Binding pseudo_auteur}" Grid.Row="1"/>
+                        <TextBox x:Name="txtMdpAuteur" Grid.Column="1" Margin="10.2,9.6,9.2,9.6" Text="{Binding mdp_auteur}" Grid.Row="2"/>
+                        <TextBox x:Name="txtImgAuteur" Grid.Column="1" Margin="10.2,10.4,9.2,9.8" Text="{Binding img_auteur}" Grid.Row="3"/>
+                        <TextBox x:Name="txtNomAuteur" Grid.Column="1" Margin="10.2,10.2,9.2,10.2" Text="{Binding nom_auteur}" Grid.Row="4"/>
+                        <TextBox x:Name="txtPreAuteur" Grid.Column="1" Margin="10.2,9.8,9.2,9.4" Text="{Binding pre_auteur}" Grid.Row="5"/>
+                        <TextBox x:Name="txtRueAuteur" Grid.Column="3" Margin="9.2,10,9.6,10.2" Text="{Binding rue_auteur}" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="txtCpAuteur" Grid.Column="3" Margin="9.2,9.8,9.6,10.4" Text="{Binding cp_auteur}" Grid.Row="1" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="txtVilleAuteur" Grid.Column="3" Margin="9.2,9.6,9.6,9.6" Text="{Binding ville_auteur}" Grid.Row="2" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="txtTelAuteur" Grid.Column="3" Margin="9.2,10.4,9.6,9.8" Text="{Binding tel_auteur}" Grid.Row="3" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="txtEmailAuteur" Grid.Column="3" Margin="9.2,10.2,9.6,10.2" Text="{Binding email_auteur}" Grid.Row="4" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="txtDescAuteur" Grid.Column="3" Margin="9.2,9.8,9.6,9.4" Text="{Binding descriptif}" Grid.Row="5" Grid.ColumnSpan="2"/>
+                        <Button x:Name="btnValiderAuteur" Grid.Row="6" Margin="205.2,9.6,107,9.8" Click="ValidAuteur" Grid.ColumnSpan="3" Grid.Column="1">Modifier</Button>
+                        <Button x:Name="btnAjouterAuteur" Grid.Row="6" Margin="10.2,9.6,10.4,9.8" Click="Ajouterauteur" Grid.Column="1">Ajouter</Button>
+                        <Button x:Name="btnSuppAuteur" Grid.Row="6" Margin="10.2,9.6,9.6,9.8" Click="SupprimerAuteur" Grid.Column="3" Grid.ColumnSpan="2" RenderTransformOrigin="0.501,0.5">Supprimer</Button>
+                    </Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Blague" Height="50">
+                <Grid Background="#FFE5E5E5" Margin="1,0,-2,0">
+                    <DataGrid x:Name="dataGridBlagues" HorizontalAlignment="Left" Margin="20,0,20,0" VerticalAlignment="Top" AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding id_blague}" Header="N°" />
+                            <DataGridTextColumn Binding="{Binding titre_blague}" Header="Titres"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Grid Margin="210,72,253,172" DataContext="{Binding ElementName=dataGridBlagues, Path=SelectedItem}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40*" />
+                            <RowDefinition Height="40*" />
+                            <RowDefinition Height="40*" />
+                            <RowDefinition Height="40*" />
+                            <RowDefinition Height="40*" />
+                            <RowDefinition Height="40*" />
+                            <RowDefinition Height="40*" />
+                            <RowDefinition Height="40*" />
+
+
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Margin="0,10,9.6,10" HorizontalAlignment="Right" Width="63">N° Blague</Label>
+                        <Label Grid.Row="1" Margin="0,10,9.6,10" HorizontalAlignment="Right" Width="79">N° Categorie*</Label>
+                        <Label Grid.Row="2" Margin="0,9.4,10.2,10.4" HorizontalAlignment="Right" Width="34">Titre</Label>
+                        <Label Grid.Row="3" Margin="0,9.6,18.2,10.2" HorizontalAlignment="Right" Width="70">Description</Label>
+                        <Label Grid.Row="4" Margin="0,9.6,18.2,10.2" HorizontalAlignment="Right" Width="70">N° illustration*</Label>
+                        <Label Grid.Row="5" Margin="0,9.6,18.2,10.2" HorizontalAlignment="Right" Width="70">N° auteur*</Label>
+                        <Label Grid.Row="6" Margin="0,9.6,18.2,10.2" HorizontalAlignment="Right" Width="70">Prix</Label>
+
+                        <TextBox x:Name="txtBlagueNum" Grid.Column="1" Margin="10.4,10,25.4,10" Text="{Binding id_blague}"/>
+                        <TextBox x:Name="TxtBlagueCatNum" Grid.Column="1" Grid.Row="1" Margin="10.4,10,25.4,10" Text="{Binding id_categorie}"/>
+                        <TextBox x:Name="TxtBlagueTitre" Grid.Column="1" Grid.Row="2" Margin="10.8,9.4,24.6,10.4" Text="{Binding titre_blague}"/>
+                        <TextBox x:Name="TxtBlagueDesc" Grid.Column="1" Grid.Row="3" Margin="10.8,9.4,24.6,10.4" Text="{Binding desc_blague}"/>
+                        <TextBox x:Name="TxtBlagueIll" Grid.Column="1" Grid.Row="4" Margin="10.8,9.4,24.6,10.4" Text="{Binding id_illustration}"/>
+                        <TextBox x:Name="TxtBlagueIdAut" Grid.Column="1" Grid.Row="5" Margin="10.8,9.4,24.6,10.4" Text="{Binding id_auteur}"/>
+                        <TextBox x:Name="TxtBlaguePrix" Grid.Column="1" Grid.Row="6" Margin="10.8,9.4,24.6,10.4" Text="{Binding px_blague}"/>
+                        <Button x:Name="btnBlagueValider" Grid.Row="7" Margin="128.8,9.4,135.6,10" Click="ValiderBlague" Grid.Column="1" RenderTransformOrigin="1.591,0.494">Modifier</Button>
+                        <Button x:Name="btnBlagueAjouter" Grid.Row="7" Margin="17.8,9.4,246.6,10" Click="AjouterBlague" Grid.Column="1" RenderTransformOrigin="1.591,0.494">Ajouter</Button>
+                        <Button x:Name="btnBlagueSupprimer" Grid.Row="7" Margin="239.8,10.4,24.6,9" Click="SupprimerBlague" Grid.Column="1" RenderTransformOrigin="1.591,0.494">Supprimer</Button>
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Categorie" Height="50">
+                <Grid Background="#FFE5E5E5" Margin="1,0,-2,0">
+                    <DataGrid x:Name="dataGridCategorie" HorizontalAlignment="Left" Margin="20,0,20,0" VerticalAlignment="Top" AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding id_categorie}" Header="N°" />
+                            <DataGridTextColumn Binding="{Binding lib_categorie}" Header="Libelle"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Grid  Grid.Row="1" Width="550" Margin="0,0,50,0" Height="200" DataContext="{Binding ElementName=dataGridCategorie, Path=SelectedItem}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Margin="10,10,10,10" HorizontalAlignment="Right">N°</Label>
+                        <Label Grid.Row="1" Margin="10,10,10,10" HorizontalAlignment="Right">Libelle*</Label>
+                        <Label Grid.Row="2" Margin="10,10,10,10" HorizontalAlignment="Right">Illustration*</Label>
+                        <TextBox x:Name="txtNum" Grid.Column="1" Margin="10,10,25,10" Text="{Binding id_categorie}"/>
+                        <TextBox x:Name="TxtLibelle" Grid.Column="1" Grid.Row="1" Margin="10,10,25,10" Text="{Binding lib_categorie}"/>
+                        <TextBox x:Name="txtIllustration" Grid.Column="1" Grid.Row="2" Margin="10,10,25,10" Text="{Binding id_illustration}"/>
+                        <Button x:Name="btnValider" Grid.Row="3" Margin="0,10.4,157.4,10" Click="ValidCategorie" Grid.Column="1" RenderTransformOrigin="0.725,0.567" HorizontalAlignment="Right" Width="103">Modifier</Button>
+                        <Button x:Name="btnAjouterCat" Grid.Row="3" Margin="0,10.4,299.4,10" Click="AjouterCategorie" Grid.Column="1" RenderTransformOrigin="0.725,0.567" HorizontalAlignment="Right" Width="103">Ajouter</Button>
+                        <Button x:Name="btnSuppCat" Grid.Row="3" Margin="0,10.4,25.4,10" Click="SupprimerCategorie" Grid.Column="1" RenderTransformOrigin="0.725,0.567" HorizontalAlignment="Right" Width="103">Supprimer</Button>
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Illustration" Height="50">
+                <Grid Background="#FFE5E5E5" Margin="1,0,-2,0">
+                    <DataGrid x:Name="dataGridIllustration" HorizontalAlignment="Left" Margin="20,0,20,0" VerticalAlignment="Top" AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding id_illustration}" Header="N°" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Grid  Grid.Row="1" Width="550" Margin="0,0,50,0" Height="200" DataContext="{Binding ElementName=dataGridIllustration, Path=SelectedItem}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Margin="10,10,10,10" HorizontalAlignment="Right">N°</Label>
+                        <Label Grid.Row="1" Margin="10,10,10,10" HorizontalAlignment="Right">Image</Label>
+                        <TextBox x:Name="txtIllNum" Grid.Column="1" Margin="10,10,25,10" Text="{Binding id_illustration}"/>
+                        <TextBox x:Name="TxtIllImg" Grid.Column="1" Grid.Row="1" Margin="10,10,25,10" Text="{Binding img_illustration}"/>
+                        <Button x:Name="btnIllValider" Grid.Row="2" Margin="142.4,10.4,158.4,10" Click="ValiderIll" Grid.Column="1">Modifier</Button>
+                        <Button x:Name="btnIllAjouter" Grid.Row="2" Margin="10.4,10.4,290.4,10" Click="AjouterIllustration" Grid.Column="1">Ajouter</Button>
+                        <Button x:Name="btnIllSupprimer" Grid.Row="2" Margin="275.4,10.4,25.4,10" Click="SupprimerIllustration" Grid.Column="1">Supprimer</Button>
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Commande" Height="50">
+                <Grid Background="#FFE5E5E5" Margin="1,0,-2,0">
+                    <DataGrid x:Name="dataGridCommande" HorizontalAlignment="Left" Margin="20,0,20,0" VerticalAlignment="Top" AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding id_commande}" Header="N° commande" />
+                            <DataGridTextColumn Binding="{Binding id_auteur}" Header="N° auteur"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Grid Width="550" Margin="202,58,203.4,358" DataContext="{Binding ElementName=dataGridCommande, Path=SelectedItem}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="72*"/>
+                            <ColumnDefinition Width="203*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Margin="0,10,9,9.6" HorizontalAlignment="Right" Width="88">N° Commande</Label>
+                        <Label Grid.Row="1" Margin="0,10.4,9,10.2" HorizontalAlignment="Right" Width="67">N° Auteur*</Label>
+                        <Label Grid.Row="2" Margin="0,9.8,9,9.8" HorizontalAlignment="Right" Width="120">Date (AAAA-MM-JJ)*</Label>
+                        <Label Grid.Row="3" Margin="0,10.2,9,10.4" HorizontalAlignment="Right" Width="35">Total</Label>
+
+                        <TextBox x:Name="txtCommNum" Grid.Column="1" Margin="11,10,24.6,9.6" Text="{Binding id_commande}"/>
+                        <TextBox x:Name="TxtCommIdAut" Grid.Column="1" Grid.Row="1" Margin="11,10.4,24.6,10.2" Text="{Binding id_auteur}"/>
+                        <TextBox x:Name="txtCommDate" Grid.Column="1" Grid.Row="2" Margin="11,9.8,24.6,9.8" Text="{Binding dated_commande}" TextChanged="txtCommDate_TextChanged"/>
+                        <TextBox x:Name="txtCommTot" Grid.Column="1" Grid.Row="3" Margin="11,10.2,24.6,10.4" Text="{Binding tot_commande}"/>
+                        <Button x:Name="btnCommValider" Grid.Row="4" Margin="153,10.6,162.6,10" Click="ValiderCommande" Grid.Column="1" RenderTransformOrigin="0.73,0.552">Modifier</Button>
+                        <Button x:Name="btnCommAjouter" Grid.Row="4" Margin="11,10.6,304.6,10" Click="AjouterCommande" Grid.Column="1" RenderTransformOrigin="0.73,0.552">Ajouter</Button>
+                        <Button x:Name="btnCommSupprimer" Grid.Row="4" Margin="291,10.6,24.6,10" Click="SupprimerCommande" Grid.Column="1" RenderTransformOrigin="0.73,0.552">Supprimer</Button>
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>
